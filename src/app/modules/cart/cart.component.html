@@ -1,0 +1,14 @@
+<h1>Cart:</h1>
+
+<ul>
+  <li *ngFor="let items of cart.products">
+    <h3>{{items.product.name}}</h3>
+    <p>Quantity: {{items.quantity}}</p>
+    <p>Price: {{items.product.price | currency}}</p>
+    <p>Total: {{items.subtotal | currency}}</p>
+  </li>
+</ul>
+
+<h2>Total:{{ cart.total | currency }}</h2>
+
+<button mat-raised-button color="primary" (click)="clearCart()">Pay now</button>
